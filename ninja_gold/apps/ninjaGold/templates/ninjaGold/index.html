@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ninja Gold</title>
+  </head>
+  <body>
+    <h1>Help Ninja make gold!</h1>
+    <button><a href="/reset">reset gold</a></button>
+    <p>Your Gold {{request.session.gold}}</p>
+
+    <h3>Farm</h3>
+    <p>(earns 10-20 golds)</p>
+    <form action="/process_money/farm" method="post">
+      {% csrf_token %}
+      <input type="submit" value="Find Gold!">
+    </form>
+
+    <h3>Cave</h3>
+    <p>(earns 5-10 golds)</p>
+    <form action="/process_money/cave" method="post">
+      {% csrf_token %}
+      <input type="submit" value="Find Gold!">
+    </form>
+
+    <h3>House</h3>
+    <p>(earns 2-5 golds)</p>
+    <form action="/process_money/house" method="post">
+      {% csrf_token %}
+      <input type="submit" value="Find Gold!">
+    </form>
+
+    <h3>Casino</h3>
+    <p>(earns/takes 0-50 golds)</p>
+    <form action="/process_money/casino" method="post">
+      {% csrf_token %}
+      <input type="submit" value="Find Gold!">
+    </form>
+
+    <p>Activities <button><a href="/clear_log">clear log</a></button></p>
+    <textarea name="name" rows="8" cols="80" readonly="">{% for i in request.session.activity_log reversed %}{{i}}{% endfor %}</textarea>
+  </body>
+</html>
