@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>User Interests</title>
+  </head>
+  <body>
+      {{user.first_name}}
+      {%for interest in interests%}
+        {{interest.name}}
+      {%endfor%}
+
+  </body>
+</html>

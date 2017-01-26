@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Add Book</title>
+  </head>
+  <body>
+    <a href="/success"><button>Home</button></a> <a href="/logout"><button>Logout</button></a>
+    <h1>Add a New Book Title and Review</h1>
+    {%if messages%}
+      {%for message in messages%}
+        {{message}}<br>
+      {%endfor%}
+    {%endif%}
+    <form action="/create_book" method="post">
+      {%csrf_token%}
+      Book Title: <input type="text" name="title" value=""><br>
+      Author: <br>
+        &emsp; Choose from the list: <select name="author_list" value="">
+            <option value="Steven King">Steven King</option>
+            <option value="J.K. Rowling">J.K. Rowling</option>
+            <option value="R.L. Stein">R.L. Stien</option>
+          </select><br>
+          &nbsp&emsp;Or add a new author: <input type="text" name="author" value=""><br>
+          Review: <br><textarea name="review" rows="8" cols="80"></textarea><br>
+          Rating: <select name="rating" value="">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select> stars<br><br>
+          <input type="submit" name="" value="Add Book and Review">
+    </form>
+  </body>
+</html>

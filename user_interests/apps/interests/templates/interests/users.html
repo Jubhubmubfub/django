@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>All Users</title>
+  </head>
+  <body>
+    <p>User Name | Action</p>
+    {%for user in users%}
+      {{user.first_name}} <a href="/user_interests/{{user.id}}"><button>Show</button></a><br>
+    {%endfor%}
+
+    <h1>INTERESTS</h1>
+    {%for interest in interests%}
+      {{interest.name}}<br>
+    {%endfor%}
+  </body>
+</html>

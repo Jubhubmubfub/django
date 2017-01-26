@@ -38,6 +38,9 @@
     </form>
 
     <p>Activities <button><a href="/clear_log">clear log</a></button></p>
-    <textarea name="name" rows="8" cols="80" readonly="">{% for i in request.session.activity_log reversed %}{{i}}{% endfor %}</textarea>
+    <!-- <textarea name="name" rows="8" cols="80" readonly="">{% for i in request.session.activity_log reversed %}{{i}}{% endfor %}</textarea> -->
+    {%for activity in request.session.activity_log reversed%}
+      <p style={{activity[1]}}>{{activity[0]}}</p>
+    {%endfor%}
   </body>
 </html>

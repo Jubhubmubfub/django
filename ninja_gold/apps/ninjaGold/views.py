@@ -75,6 +75,6 @@ def process(request,building):
                 print "\nLost %s gold"%(gold)
                 print "current gold:",request.session['gold'],"\n"
                 request.session['activity_log'].append("\nCurrent gold: {}".format(request.session['gold']))
-                request.session['activity_log'].append("\nLost %s gold at the Casino"%(gold*(-1)))
+                request.session['activity_log'].append(['\nLost %s gold at the Casino'%(gold*(-1)),'color:red'])
             return redirect('/')
     return redirect('/')

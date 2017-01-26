@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h3>User Alias: {{user.alias}} </h3>
+    <a href="/success"><button>Home</button></a><a href="/add_book_review"><button>
+    Add Book and Review</button></a>
+    <a href="/logout"><button>
+    Log out</button></a>
+
+    <br>
+
+    Name: {{user.first_name}}<br>
+    Email: {{user.email}}<br>
+    Total Reviews: {{count}} <br><br><br>
+    Posted Reviews on the following books:<br>
+
+    {%for review in reviews%}
+      <a href="/add_review/{{review.book.id}}">{{review.book.title}}</a><br>
+      <a href="/add_review/{{review.book__id}}">{{review.book__title}}</a><br>
+    {%endfor%}<br>
+    {%for review in review_set%}
+      asdfasdf
+    {%endfor%}
+  </body>
+</html>
